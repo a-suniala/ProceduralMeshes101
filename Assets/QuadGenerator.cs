@@ -13,7 +13,7 @@ public class QuadGenerator : MonoBehaviour {
 		);
 	}
 
-	Mesh MakeQuad (Vector3 vectA, Vector3 vectB)
+	public static Mesh MakeQuad (Vector3 vectA, Vector3 vectB)
 	{
 		// Create and define vertices
 		Vector3[] vertices = new Vector3[4];
@@ -49,7 +49,7 @@ public class QuadGenerator : MonoBehaviour {
 		return mesh;
 	}
 
-	Vector3[] CalculateNormals (Mesh mesh) {
+	public static Vector3[] CalculateNormals (Mesh mesh) {
 		Vector3[] vertices = mesh.vertices;
 		int[] triangles = mesh.triangles;
 		Vector3[] normals = new Vector3[4];
