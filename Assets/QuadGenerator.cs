@@ -5,12 +5,12 @@ using System.Collections;
 [ExecuteInEditMode]
 public class QuadGenerator : MonoBehaviour {
 
-	void Update () {
-		MeshFilter mf = GetComponent<MeshFilter>();
-		mf.mesh = MakeQuad(
-			new Vector3 (0,1,0),
-			new Vector3 (1,0,0)
-		);
+	void Start () {
+//		MeshFilter mf = GetComponent<MeshFilter>();
+//		mf.mesh = MakeQuad(
+//			new Vector3 (0,1,0),
+//			new Vector3 (1,0,0)
+//		);
 	}
 
 	public static Mesh MakeQuad (Vector3 vectA, Vector3 vectB)
