@@ -26,18 +26,17 @@ public class CubeGenerator : MonoBehaviour {
 		cube = MeshBuilder.Combine(cube, MeshBuilder.Offset (QuadGenerator.MakeQuad(
 			new Vector3 (0,1,0),
 			new Vector3 (0,0,-1)
-			), new Vector3 (0,0,1)
-		));
+			), new Vector3 (0,0,1) ));
 		uvs.Add(new Vector2(3f/4f, 1f/3f));
 		uvs.Add(new Vector2(3f/4f, 2f/3f));
 		uvs.Add(new Vector2(1f   , 2f/3f));
 		uvs.Add(new Vector2(1f   , 1f/3f));
 
 		// Down
-		cube = MeshBuilder.Combine(cube, QuadGenerator.MakeQuad(
-			new Vector3 (1,0,0),
-			new Vector3 (0,0,1)
-		));
+		cube = MeshBuilder.Combine(cube, MeshBuilder.Offset (QuadGenerator.MakeQuad(
+			new Vector3 (0,0,-1),
+			new Vector3 (1,0,0)
+		), new Vector3 (0,0,1) ));
 		uvs.Add(new Vector2(0f   , 0f   ));
 		uvs.Add(new Vector2(0f   , 1f/3f));
 		uvs.Add(new Vector2(1f/4f, 1f/3f));
@@ -65,13 +64,13 @@ public class CubeGenerator : MonoBehaviour {
 
 		// Back
 		cube = MeshBuilder.Combine(cube, MeshBuilder.Offset (QuadGenerator.MakeQuad(
-			new Vector3 (0,-1,0),
-			new Vector3 (1,0,0)
-			), new Vector3 (0,1,1) ));
-		uvs.Add(new Vector2(3f/4f, 2f/3f)); //C
-		uvs.Add(new Vector2(3f/4f, 1f/3f)); //D
-		uvs.Add(new Vector2(1f/2f, 1f/3f)); //A
-		uvs.Add(new Vector2(1f/2f, 2f/3f)); //B
+			new Vector3 (0,1,0),
+			new Vector3 (-1,0,0)
+			), new Vector3 (1,0,1) ));
+		uvs.Add(new Vector2(1f/2f, 1f/3f));
+		uvs.Add(new Vector2(1f/2f, 2f/3f));
+		uvs.Add(new Vector2(3f/4f, 2f/3f));
+		uvs.Add(new Vector2(3f/4f, 1f/3f));
 
 		cube = MeshBuilder.Offset(cube, new Vector3(-0.5f, -0.5f, -0.5f));
 		cube.uv = uvs.ToArray();
