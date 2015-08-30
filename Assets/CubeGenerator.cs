@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(MeshFilter))]
+[ExecuteInEditMode]
 public class CubeGenerator : MonoBehaviour {
 
 	void Start () {
@@ -50,6 +52,8 @@ public class CubeGenerator : MonoBehaviour {
          ));
 
 		cube = MeshBuilder.Offset(cube, new Vector3(-0.5f, -0.5f, -0.5f));
+		cube.RecalculateBounds();
+		cube.RecalculateNormals();
 	
 		mf.mesh = cube;
 	}

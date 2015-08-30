@@ -6,6 +6,9 @@ using System.Collections;
 public class FancyCubeGenerator : MonoBehaviour {
 
 	void Start () {
+		// This code leads to faulty calculation of normals for a flat surface object
+		// It's only here as an example
+
 		Mesh mesh = new Mesh();
 
 		Vector3[] vertices = {
